@@ -27,6 +27,7 @@ async function getPeoplePuppet() {
 	const name = allChar[random].name;
 	const srcData = await fetch(`http://localhost:5000/src/${name}`);
 	const { src } = await srcData.json();
+	console.log("this is srcData from localhost 5000");
 	console.log(src);
 	const removedEverythingAfterJPG = src.replace(
 		/^(.+?\.(png|jpe?g)).*$/i,

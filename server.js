@@ -2,6 +2,7 @@ const express = require("express");
 const puppeteer = require("puppeteer");
 const app = express();
 const PORT = process.env.PORT || 5000;
+console.log(PORT);
 app.use(express.static("./public"));
 
 app.get("/src/:name", async (req, res) => {
