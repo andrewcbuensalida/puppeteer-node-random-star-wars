@@ -62,4 +62,3 @@ async function getPeopleFast() {
 		"outputFast"
 	).innerHTML = `<h1>${name}</h1><br>API method<br>${totalTime} seconds<br>${imageEl}`;
 }
-// console.log(fetch("https://swapi.dev/api/people/"));
