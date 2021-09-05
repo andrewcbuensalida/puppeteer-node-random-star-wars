@@ -5,3 +5,5 @@ now trying https://www.youtube.com/watch?v=Buh3GjHPmjo
 this method sucks because the other app deployed with this method the naked
 domain doesnt work because it it redirects to https. had to do an extra step
 on authenticating im the owner, search ssl in aws
+installing forever has to be npm i forever -g
+to start forever, forever start <name of server.js>
