@@ -25,9 +25,7 @@ async function getPeoplePuppet() {
 	console.log(allChar);
 	const random = Math.floor(Math.random() * (allChar.length + 1));
 	const name = allChar[random].name;
-	const srcData = await fetch(
-		`http://ec2-18-141-158-37.ap-southeast-1.compute.amazonaws.com:5000/src/${name}`
-	);
+	const srcData = await fetch(`http://18.141.158.37:5000/src/${name}`);
 	const { src } = await srcData.json();
 	console.log("this is srcData from localhost 5000");
 	console.log(src);
