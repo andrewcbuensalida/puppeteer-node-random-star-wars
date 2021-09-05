@@ -7,3 +7,5 @@ domain doesnt work because it it redirects to https. had to do an extra step
 on authenticating im the owner, search ssl in aws, and even that stopped working.
 installing forever has to be npm i forever -g
 to start forever, forever start <name of server.js>
+applicationstop script is the one that was loaded before the new one currently
+being deployed.

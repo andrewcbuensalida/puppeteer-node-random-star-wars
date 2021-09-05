@@ -1,4 +1,11 @@
 #!/bin/bash
+
+#give permission for everything in the express-app directory
+sudo chmod -R 777 /home/ec2-user/star
+
+#navigate into our working directory where we have all our github files
+cd /home/ec2-user/star
+
 #add npm and node to path
 export NVM_DIR="$HOME/.nvm"	
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm	
