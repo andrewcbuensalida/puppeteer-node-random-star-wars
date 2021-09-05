@@ -16,5 +16,5 @@ cd /home/ec2-user/star
 echo "Stopping any existing node servers"
 pkill node
 
-echo "stopping forever 1"
-forever stopall
+# echo "stopping forever 1"
+# forever stopall
