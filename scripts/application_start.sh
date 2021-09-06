@@ -13,8 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 
 #install node modules
 npm install
-npm install forever -g
+# npm install forever -g
 
 #start our node app in the background
-# node server.js > server.out.log 2> server.err.log < /dev/null & 
-forever start server.js
+node server.js > server.out.log 2> server.err.log < /dev/null & 
+# forever start server.js
