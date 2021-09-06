@@ -17,4 +17,5 @@ echo "Stopping any existing node servers"
 pkill node
 
 # echo "stopping forever 1"
+npm install forever -g
 forever stopall
