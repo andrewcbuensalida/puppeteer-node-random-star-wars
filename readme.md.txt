@@ -9,3 +9,7 @@ installing forever has to be npm i forever -g
 to start forever, forever start <name of server.js>
 applicationstop script is the one that was loaded before the new one currently
 being deployed.
+to run puppeteer on node on linux
+https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-on-aws-ec2-instance-running-amazon-linux
+have to install sudo amazon-linux-extras install epel -y
+and sudo yum install -y chromium

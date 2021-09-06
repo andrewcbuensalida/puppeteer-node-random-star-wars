@@ -4,7 +4,7 @@
 # sudo chmod -R 777 /home/ec2-user/star
 
 # #navigate into our working directory where we have all our github files
-# cd /home/ec2-user/star
+cd /home/ec2-user/star
 
 # #add npm and node to path
 # export NVM_DIR="$HOME/.nvm"	
@@ -17,4 +17,4 @@ echo "Stopping any existing node servers"
 pkill node
 
 # echo "stopping forever 1"
-# forever stopall
+forever stopall
