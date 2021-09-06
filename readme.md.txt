@@ -17,3 +17,5 @@ had to do the kitchen sink method in stop script
 setting port in server.js to 80 doesnt work
 to remove the :5000 at the end of the url, have to point a url to that one, 
 which ive done. now trying something else.
+when trying to fetch puppeteer with localhost, cors problem, so trying to 
+use cors middleware.
