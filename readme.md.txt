@@ -14,3 +14,4 @@ https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running
 have to install sudo amazon-linux-extras install epel -y
 and sudo yum install -y chromium
 the path to scripts in linux /opt/codedeploy-agent/deployment-root/430cc14f-3952-4b4a-a230-aed64b38294a/d-SD5HRMFDC/deployment-archive/scripts/
+had to do the kitchen sink method in stop script
