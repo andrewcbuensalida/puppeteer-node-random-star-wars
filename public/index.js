@@ -50,7 +50,6 @@ async function getPeoplePuppet() {
 	document.getElementById(
 		"output"
 	).innerHTML = `<h1>${name}</h1><br>Web Scrape with Puppeteer method<br>${totalTime} seconds<br>${image}`;
-	document.getElementById("myProgress").style.display = "none";
 }
 async function getPeopleFast() {
 	const startTime = new Date();
