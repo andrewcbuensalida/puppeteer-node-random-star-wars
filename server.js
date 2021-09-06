@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 console.log(PORT);
 app.use(express.static("./public"));
-
+app.use(cors());
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
 	console.log("puppeteering");

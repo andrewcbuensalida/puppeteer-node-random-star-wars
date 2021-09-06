@@ -15,3 +15,5 @@ the path to scripts in linux /opt/codedeploy-agent/deployment-root/430cc14f-3952
 but i think above is just a log
 had to do the kitchen sink method in stop script
 setting port in server.js to 80 doesnt work
+to remove the :5000 at the end of the url, have to point a url to that one, 
+which ive done. now trying something else.

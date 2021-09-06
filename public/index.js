@@ -9,6 +9,10 @@ async function getPeoplePuppet() {
 	document.getElementById(
 		"output"
 	).innerHTML = `<img src='https://mir-s3-cdn-cf.behance.net/project_modules/fs/b6e0b072897469.5bf6e79950d23.gif'/>`;
+	document.getElementById("output").innerHTML += `<div id="myProgress">
+			<div id="myBar"></div>
+		</div>`;
+
 	let pageNum = 1;
 	let allChar = [];
 	while (true) {
@@ -17,6 +21,10 @@ async function getPeoplePuppet() {
 		);
 		const pageJSON = await pageData.json();
 		console.log(pageJSON);
+		// progress bar progressing
+		const progress = (allChar.length / pageJSON.count) * 80;
+		document.getElementById("myBar").style.width = `${progress}%`;
+
 		allChar = [...allChar, ...pageJSON.results];
 		console.log(allChar);
 		if (pageJSON.next == null) break;
@@ -42,6 +50,7 @@ async function getPeoplePuppet() {
 	document.getElementById(
 		"output"
 	).innerHTML = `<h1>${name}</h1><br>Web Scrape with Puppeteer method<br>${totalTime} seconds<br>${image}`;
+	document.getElementById("myProgress").style.display = "none";
 }
 async function getPeopleFast() {
 	const startTime = new Date();
