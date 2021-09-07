@@ -19,3 +19,9 @@ to remove the :5000 at the end of the url, have to point a url to that one,
 which ive done. now trying something else.
 when trying to fetch puppeteer while on localhost, cors problem, so trying to 
 use cors middleware and it worked.
+to remove the port 5000 from the url, try 
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+from https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode
+but it doesnt work
+now trying https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/node-configuring-proxies.html
+
