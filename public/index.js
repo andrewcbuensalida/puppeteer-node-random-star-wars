@@ -32,22 +32,27 @@ async function getPeoplePuppet() {
 	}
 	console.log(allChar);
 	const random = Math.floor(Math.random() * (allChar.length + 1));
-	const name = allChar[random].name;
-	const srcData = await fetch(`http://50.18.72.90:5000/src/${name}`);
-	const { src } = await srcData.json();
-	console.log("this is srcData from localhost 5000");
-	console.log(src);
-	const removedEverythingAfterJPG = src.replace(
-		/^(.+?\.(png|jpe?g)).*$/i,
-		"$1"
-	);
-	console.log(removedEverythingAfterJPG);
-	const image = `<img src='${removedEverythingAfterJPG}'/>`;
-	const endTime = new Date();
-	const totalTime = `Elapsed time = ${(endTime - startTime) / 1000}`;
-	document.getElementById(
-		"output"
-	).innerHTML = `<h1>${name}</h1><br>Web Scrape with Puppeteer method<br>${totalTime} seconds<br>${image}`;
+	// sometimes allChar[random] is undefined
+	if (allChar[random]) {
+		const name = allChar[random].name;
+		const srcData = await fetch(`http://50.18.72.90:5000/src/${name}`);
+		const { src } = await srcData.json();
+		console.log("this is srcData from localhost 5000");
+		console.log(src);
+		const removedEverythingAfterJPG = src.replace(
+			/^(.+?\.(png|jpe?g)).*$/i,
+			"$1"
+		);
+		console.log(removedEverythingAfterJPG);
+		const image = `<img src='${removedEverythingAfterJPG}'/>`;
+		const endTime = new Date();
+		const totalTime = `Elapsed time = ${(endTime - startTime) / 1000}`;
+		document.getElementById(
+			"output"
+		).innerHTML = `<h1>${name}</h1><br>Web Scrape with Puppeteer method<br>${totalTime} seconds<br>${image}`;
+	} else {
+		getPeoplePuppet();
+	}
 }
 async function getPeopleFast() {
 	const startTime = new Date();
