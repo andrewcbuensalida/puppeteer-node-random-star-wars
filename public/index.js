@@ -1,6 +1,6 @@
-// const axios = require("axios");
-// console.log(axios);
+let isGettingPeople = false;
 function getPeople() {
+	isGettingPeople = true;
 	getPeoplePuppet();
 	getPeopleFast();
 }
@@ -50,6 +50,7 @@ async function getPeoplePuppet() {
 		document.getElementById(
 			"output"
 		).innerHTML = `<h1>${name}</h1><br>Web Scrape with Puppeteer method<br>${totalTime} seconds<br>${image}`;
+		isGettingPeople = false;
 	} else {
 		getPeoplePuppet();
 	}
@@ -64,12 +65,16 @@ async function getPeopleFast() {
 	);
 	const allJSON = await allData.json();
 	const random = Math.floor(Math.random() * (allJSON.length + 1));
-	const name = allJSON[random].name;
-	const src = allJSON[random].image;
-	const imageEl = `<img src='${src}'/>`;
-	const endTime = new Date();
-	const totalTime = `Elapsed time = ${(endTime - startTime) / 1000}`;
-	document.getElementById(
-		"outputFast"
-	).innerHTML = `<h1>${name}</h1><br>API method<br>${totalTime} seconds<br>${imageEl}`;
+	if (allJSON[random]) {
+		const name = allJSON[random].name;
+		const src = allJSON[random].image;
+		const imageEl = `<img src='${src}'/>`;
+		const endTime = new Date();
+		const totalTime = `Elapsed time = ${(endTime - startTime) / 1000}`;
+		document.getElementById(
+			"outputFast"
+		).innerHTML = `<h1>${name}</h1><br>API method<br>${totalTime} seconds<br>${imageEl}`;
+	} else {
+		getPeopleFast();
+	}
 }

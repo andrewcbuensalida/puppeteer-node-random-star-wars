@@ -6,15 +6,47 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="style.css" />
+		<head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		</head>
 	</head>
 	<body>
+		<!-- warp speed stuff -->
+		<div
+			id="holder"
+			style="
+				background-color: #000;
+				width: 100%;
+				height: 100%;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				position: fixed;
+				z-index: -1;
+			"
+		>
+			<div
+				id="effect"
+				style="
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					right: 0;
+					left: 0;
+					top: 0;
+					bottom: 0;
+				"
+			></div>
+		</div>
 		<h1>Get random Star Wars Characters</h1>
 		<button onclick="getPeople()">Click</button>
 		<div class="both">
 			<div class="single" id="output"></div>
 			<div class="single" id="outputFast"></div>
 		</div>
-
+		<div id="canvas"></div>
+		<script src="./warp.js"></script>
 		<script src="./index.js"></script>
 	</body>
 </html>
