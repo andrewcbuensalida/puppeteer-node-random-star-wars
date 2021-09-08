@@ -26,3 +26,5 @@ but it doesnt work
 now trying https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/node-configuring-proxies.html
 did the elastic ip bull
 NEVER AGAIN DO EC2 METHOD
+the only project where https works is the one on amplify, which creates a cloudfront
+the ec2 projects are the ones with :port at the end of the url
