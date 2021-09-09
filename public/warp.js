@@ -27,7 +27,7 @@ $(document).ready(function () {
 	};
 
 	if (!mobile) {
-		canvas.addEventListener("mousemove", mouseMoveHandler);
+		window.addEventListener("mousemove", mouseMoveHandler);
 		// canvas.addEventListener("mousedown", mouseDownHandler);
 		// canvas.addEventListener("mouseup", mouseUpHandler);
 		// canvas.addEventListener("mouseenter", mouseEnterHandler);
