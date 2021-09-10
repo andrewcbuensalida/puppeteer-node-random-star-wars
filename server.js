@@ -2,10 +2,10 @@ const express = require("express");
 const puppeteer = require("puppeteer");
 const app = express();
 const PORT = process.env.PORT || 5000;
-// var cors = require("cors");
+var cors = require("cors");
 console.log(PORT);
 app.use(express.static("./public"));
-// app.use(cors());
+app.use(cors());
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
 	console.log("puppeteering");
