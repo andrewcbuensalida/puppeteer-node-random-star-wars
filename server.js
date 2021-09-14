@@ -8,7 +8,7 @@ app.use(express.static("./public"));
 app.use(cors());
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
-	console.log("puppeteering");
+	console.log("puppeteering and testing if cicd works");
 	const browser = await puppeteer.launch({ headless: true });
 	const page = await browser.newPage();
 	const query = `https://www.google.com/search?source=lnms&tbm=isch&sa=X&q=${req.params.name}`;
