@@ -2,11 +2,13 @@ https://www.youtube.com/watch?v=KoNWlnx6E1I
 trying to use code deploy from github to aws ec2.
 didnt work because his doesnt have node
 now trying https://www.youtube.com/watch?v=Buh3GjHPmjo
-this method sucks because the other app deployed with this method the naked
+this methods works but it sucks because the other app deployed with this method the naked
 domain doesnt work because it it redirects to https. had to do an extra step
 on authenticating im the owner, search ssl in aws, and even that stopped working.
+
 installing forever has to be npm i forever -g
 to start forever, forever start <name of server.js>
+
 to run puppeteer on node on linux
 https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-on-aws-ec2-instance-running-amazon-linux
 have to install sudo amazon-linux-extras install epel -y
@@ -24,7 +26,7 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-po
 from https://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode
 but it doesnt work
 now trying https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/node-configuring-proxies.html
-did the elastic ip bull
+did the elastic ip bull and it worked but still with the port at the end of the url
 NEVER AGAIN DO EC2 METHOD
 the only project where https works is the one on amplify, which creates a cloudfront
 the ec2 projects are the ones with :port at the end of the url
