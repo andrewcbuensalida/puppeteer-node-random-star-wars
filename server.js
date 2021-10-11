@@ -10,7 +10,9 @@ app.use(cors());
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
 	console.log("test1");
-	const browser = await puppeteer.launch({ headless: true });
+	const browser = await puppeteer.launch({
+		executablePath: "/usr/bin/chromium-browser",
+	});
 	console.log("test2");
 
 	const page = await browser.newPage();

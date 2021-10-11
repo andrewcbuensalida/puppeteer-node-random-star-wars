@@ -32,3 +32,8 @@ the only project where https works is the one on amplify, which creates a cloudf
 the ec2 projects are the ones with :port at the end of the url
 
 todo app is probably more up to date when it comes to cicd.
+
+NOW MIGRATING TO EC2 WITH DOCTORDB AND BOOKS
+
+dont forget # sudo amazon-linux-extras install epel -y
+# sudo yum install -y chromium
