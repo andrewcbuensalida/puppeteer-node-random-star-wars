@@ -30,3 +30,5 @@ did the elastic ip bull and it worked but still with the port at the end of the 
 NEVER AGAIN DO EC2 METHOD
 the only project where https works is the one on amplify, which creates a cloudfront
 the ec2 projects are the ones with :port at the end of the url
+
+todo app is probably more up to date when it comes to cicd.
