@@ -11,6 +11,7 @@ app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
 	console.log("test1");
 	const browser = await puppeteer.launch({
+		headless: "true",
 		executablePath: "/usr/bin/chromium-browser",
 	});
 	console.log("test2");
