@@ -35,7 +35,7 @@ async function getPeoplePuppet() {
 	// sometimes allChar[random] is undefined
 	if (allChar[random]) {
 		const name = allChar[random].name;
-		const srcData = await fetch(`http://50.18.72.90:5000/src/${name}`);
+		const srcData = await fetch(`/src/${name}`);
 		const { src } = await srcData.json();
 		console.log("this is srcData from localhost 5000");
 		console.log(src);

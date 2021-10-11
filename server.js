@@ -3,13 +3,16 @@ const puppeteer = require("puppeteer");
 const app = express();
 const PORT = process.env.PORT || 5000;
 var cors = require("cors");
-console.log(PORT);
+
 app.use(express.static("./public"));
 app.use(cors());
+
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
-	console.log("puppeteering and testing if cicd works");
+	console.log("test1");
 	const browser = await puppeteer.launch({ headless: true });
+	console.log("test2");
+
 	const page = await browser.newPage();
 	const query = `https://www.google.com/search?source=lnms&tbm=isch&sa=X&q=${req.params.name}`;
 	await page.goto(query, {
@@ -23,7 +26,7 @@ app.get("/src/:name", async (req, res) => {
 		(node) => node.src
 	);
 	browser.close();
-	// console.log(src);
+	console.log("3");
 	res.json({ src });
 });
 
