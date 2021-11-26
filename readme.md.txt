@@ -33,7 +33,33 @@ the ec2 projects are the ones with :port at the end of the url
 
 todo app is probably more up to date when it comes to cicd.
 
-NOW MIGRATING TO EC2 WITH DOCTORDB AND BOOKS
+NOW MIGRATING TO EC2 WITH DOCTORDB AND BOOKS, then why isnt it there?
 
 dont forget # sudo amazon-linux-extras install epel -y
 # sudo yum install -y chromium
+
+
+
+now migrating to ec2 t2 micro.
+nginx config:
+
+sudo nano /etc/nginx/sites-available/starwars.anhonestobserver.com.conf
+
+nginx now looks like
+server {
+    listen 80;
+    server_name starwars.anhonestobserver.com www.starwars.anhonestobserver.com;
+
+    location / {
+        proxy_pass http://localhost:5000/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+have to do the sim link thing sudo ln -s /etc/nginx/sites-available/starwars.anhonestobserver.com.conf /etc/nginx/sites-enabled/
+sudo systemctl reload nginx to make sure it's working
+because certbot was previously installed, it redirected books.anhonest to doctordb.anhonest. to fix, just run sudo certbot --nginx again to expand the certificates. dont be alarmed if the pem name is still doctordb. it still works.
