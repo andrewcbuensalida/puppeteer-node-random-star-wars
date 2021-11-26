@@ -9,15 +9,14 @@ app.use(cors());
 
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
-	console.log("test1");
+	console.log("1");
 	const browser = await puppeteer.launch({
 		headless: "true",
-		executablePath: "/usr/bin/chromium-browser",
 	});
-	console.log("test2");
+	console.log("2");
 
 	const page = await browser.newPage();
-	console.log(`test3`);
+	console.log(`3`);
 
 	const query = `https://www.google.com/search?source=lnms&tbm=isch&sa=X&q=${req.params.name}`;
 
