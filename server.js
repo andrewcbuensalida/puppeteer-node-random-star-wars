@@ -17,19 +17,27 @@ app.get("/src/:name", async (req, res) => {
 	console.log("test2");
 
 	const page = await browser.newPage();
+	console.log(`test3`);
+
 	const query = `https://www.google.com/search?source=lnms&tbm=isch&sa=X&q=${req.params.name}`;
+
 	await page.goto(query, {
 		waitUntil: "networkidle0",
 	});
+	console.log(`4`);
 	await page.waitForSelector(
 		"#islrg > div.islrc > div:nth-child(1) > a.wXeWr.islib.nfEiy > div.bRMDJf.islir > img"
 	);
+	console.log(`5`);
+
 	const src = await page.$eval(
 		"#islrg > div.islrc > div:nth-child(1) > a.wXeWr.islib.nfEiy > div.bRMDJf.islir > img",
 		(node) => node.src
 	);
+	console.log(`6`);
+
 	browser.close();
-	console.log("3");
+	console.log("7");
 	res.json({ src });
 });
 

@@ -63,3 +63,6 @@ server {
 have to do the sim link thing sudo ln -s /etc/nginx/sites-available/starwars.anhonestobserver.com.conf /etc/nginx/sites-enabled/
 sudo systemctl reload nginx to make sure it's working
 because certbot was previously installed, it redirected books.anhonest to doctordb.anhonest. to fix, just run sudo certbot --nginx again to expand the certificates. dont be alarmed if the pem name is still doctordb. it still works.
+
+to install puppeteer:
+npm install -g puppeteer --unsafe-perm=true -allow-root && sudo apt install chromium-browser -y
