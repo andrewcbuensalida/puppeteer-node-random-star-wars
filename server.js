@@ -7,6 +7,7 @@ var cors = require("cors");
 app.use(express.static("./public"));
 app.use(cors());
 
+// this thing crashes the server if the server has only 1gb memory
 app.get("/src/:name", async (req, res) => {
 	console.log(req.params.name);
 	console.log("1");

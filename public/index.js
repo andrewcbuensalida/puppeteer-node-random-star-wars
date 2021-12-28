@@ -1,7 +1,7 @@
 let isGettingPeople = false;
 function getPeople() {
 	isGettingPeople = true;
-	getPeoplePuppet();
+	// getPeoplePuppet();
 	getPeopleFast();
 }
 async function getPeoplePuppet() {
@@ -74,6 +74,8 @@ async function getPeopleFast() {
 		document.getElementById(
 			"outputFast"
 		).innerHTML = `<h1>${name}</h1><br>API method<br>${totalTime} seconds<br>${imageEl}`;
+		// remove this if with pupppeteer
+		setTimeout(()=>		isGettingPeople = false,3000)
 	} else {
 		getPeopleFast();
 	}

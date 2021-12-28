@@ -70,10 +70,21 @@ npm install -g puppeteer --unsafe-perm=true -allow-root && sudo apt install chro
 puppeteer not working
 
 so trying 
-
 sudo apt install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
 
 hanged so refreshed page,
 
 now 
 sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1
+
+not sure if the extraneous installs were needed, but what solved it was removing the executablePath in the puppeteer.launch.
+
+pm2 start server.js --watch --name starwars
+
+fetching crashes the server, so did sudo apt remove chromium-browser
+and
+sudo apt remove puppeteer
+then
+sudo apt autoremove
+
+now reinstalling it
